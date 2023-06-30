@@ -43,6 +43,8 @@ class CalendarEventData<T extends Object?> {
   /// Define style of description.
   final TextStyle? descriptionStyle;
 
+  final int? iconCode;
+
   /// Stores all the events on [date]
   const CalendarEventData({
     required this.title,
@@ -54,6 +56,7 @@ class CalendarEventData<T extends Object?> {
     this.titleStyle,
     this.descriptionStyle,
     DateTime? endDate,
+    this.iconCode,
     required this.date,
   }) : _endDate = endDate;
 
@@ -67,6 +70,7 @@ class CalendarEventData<T extends Object?> {
         "title": title,
         "description": description,
         "endDate": endDate,
+        "iconCode": iconCode,
       };
 
   @override
@@ -91,7 +95,8 @@ class CalendarEventData<T extends Object?> {
         color == other.color &&
         titleStyle == other.titleStyle &&
         descriptionStyle == other.descriptionStyle &&
-        description == other.description;
+        description == other.description &&
+        iconCode == other.iconCode;
   }
 
   @override
